@@ -1,4 +1,4 @@
-export PREFIX := /usr/
+export PREFIX := /usr
 
 .PHONY: all
 all:
@@ -8,12 +8,12 @@ all:
 .PHONY: install
 install: wall.sh wallutils.sh
 	$(info "INFO: install PREFIX: $(PREFIX)")
-	mkdir -p $(DESTDIR)$(PREFIX)share/instantwallpaper
-	mkdir -p $(DESTDIR)$(PREFIX)share/backgrounds
-	install -Dm 755 wall.sh $(DESTDIR)$(PREFIX)bin/instantwallpaper
-	install -m 644 wallutils.sh $(DESTDIR)$(PREFIX)share/instantwallpaper/
+	mkdir -p $(DESTDIR)$(PREFIX)/share/instantwallpaper
+	mkdir -p $(DESTDIR)$(PREFIX)/share/backgrounds
+	install -Dm 755 wall.sh $(DESTDIR)$(PREFIX)/bin/instantwallpaper
+	install -m 644 wallutils.sh $(DESTDIR)$(PREFIX)/share/instantwallpaper/
 
 .PHONY: uninstall
 uninstall:
-	rm -r $(DESTDIR)$(PREFIX)share/instantwallpaper
-	rm -f $(DESTDIR)$(PREFIX)bin/instantwallpaper
+	rm -r $(DESTDIR)$(PREFIX)/share/instantwallpaper
+	rm -f $(DESTDIR)$(PREFIX)/bin/instantwallpaper
